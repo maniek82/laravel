@@ -13,6 +13,8 @@ sudo composer update
 
 
 *************INSTAL GITHUB****************
+
+ create a new repository on the command line
 echo "# laravel" >> README.md
 git init
 git add README.md
@@ -20,3 +22,6 @@ git commit -m "first commit"
 git remote add origin git@github.com:maniek82/laravel.git
 git push -u origin master
 
+git add -A
+git commit -m "Added all files"
+git push origin master

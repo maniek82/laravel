@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Sample</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -28,18 +28,35 @@
             .content {
                 text-align: center;
                 display: inline-block;
+                width:100%;
+                height: 90vh;
             }
 
             .title {
-                font-size: 96px;
+                font-size: 46px;
+            }
+            .footer {
+                margin-top:100px;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5 by Maniek</div>
+                <div class="title">
+                   @yield("content")
+                </div>
             </div>
-        </div>
+        
+          <div class="content">
+             
+               @yield("footer")
+            
+         </div>
+      </div>
     </body>
 </html>
+
+     
+      
+     
