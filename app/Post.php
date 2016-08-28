@@ -1,0 +1,35 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Post extends Model
+{
+    
+    
+  use SoftDeletes;
+  
+  protected $dates = ['deleted_at'];
+  
+  protected $fillable = [
+      'title',
+      'content'
+      ];
+  
+  //tell laravel that table has different name
+//   protected $table = "something different than model name";
+  
+  public function user() {
+      return $this->belongsTo("App\User");
+  }
+  
+  public function photos() {
+    return $this->morphMany('App\Photo','imageable');
+  }
+  
+  public function tags() {
+    return $this->morphToMany('App\Tag','taggable');
+  }
+}

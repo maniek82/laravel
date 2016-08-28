@@ -23,4 +23,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function post() {
+        return $this->hasOne('App\Post');//if i want different colun put in array as 2 argument
+        
+    }
+    
+    public function posts() {
+        return $this->hasMany('App\Post');
+    }
+    
+    public function roles() {
+        return $this->belongsToMany('App\Role')->withPivot('created_at');
+    }
+    
+    public function photos() {
+        return $this->morphMany('App\Photo', 'imageable');
+        
+    }
+    
 }

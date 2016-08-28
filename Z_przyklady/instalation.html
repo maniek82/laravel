@@ -1,3 +1,5 @@
+<?php
+
 ***********INSTAL LARAVEL***************
 rm README.md php.ini hello-world.php
 sudo composer self-update
@@ -25,3 +27,24 @@ git push -u origin master
 git add -A
 git commit -m "Added all files"
 git push origin master
+
+************ARTISAN MIGRATION************
+php artisan migrate
+php artisan make:migration create_posts_table --create="posts"
+php artisan make:migration add_is_admin_colun_to_posts_table --table="posts"
+
+ php artisan migrate:rollback
+ php artisan migrate:reset  - usuwa wszyszkie kolumny w bazy
+ 
+ php artisan migrate:refresh  - rolluje i migruje
+  php artisan make:model Role -m  - model z migracja
+  php artisan make:migration create_users_roles_table --create=role_user  (tworzymy pivot table w allfabetyczej colejnosci i liczbie pojedynczej)
+  
+ 
+
+
+
+
+
+
+

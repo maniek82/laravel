@@ -90,7 +90,7 @@ class PostsController extends Controller
         return view('contact',compact("people"));
     }
     
-    public function show_post($id,$name="maniek",$password = "sample") {
+    public function show_post($id="first",$name="post",$password = "example") {
         // return view("post")->with("id", $id);
      return view("post",compact("id","name","password"));
         
